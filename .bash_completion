@@ -1,0 +1,54 @@
+_terraform() {
+  local cur prev words cword opts
+  _get_comp_words_by_ref -n : cur prev words cword
+  COMPREPLY=()
+  opts=""
+
+  if [[ ${cur} == -* ]] ; then
+    compopt -o nospace
+  fi
+
+  if [[ ${cword} -eq 1 ]] ; then
+    if [[ ${cur} == -* ]] ; then
+      opts="--help --version"
+    else
+      opts="$(terraform --help | grep -vE '(usage|Available|^$)' | awk '{print $1}')"
+    fi
+  fi
+
+  if [[ ${cword} -gt 1 ]] ; then
+    if [[ ${cword} -eq 2 && ${prev} == '--help' ]] ; then
+      opts="$(terraform --help | grep -vE '(usage|Available|^$)' | awk '{print $1}')"
+    else
+      opts="$(terraform --help "${words[1]}" | grep '^ *-[a-z]' | awk '{print $1}' | awk -F '=' '{if ($0 ~ /=/) {print $1"="} else {print $1" "}}')"
+    fi
+  fi
+
+  COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+  return 0
+}
+
+complete -F _terraform terraform
+complete -F _terraform tf
+
+_complete_ssh_hosts ()
+{
+        COMPREPLY=()
+        cur="${COMP_WORDS[COMP_CWORD]}"
+        comp_ssh_hosts=`cat ~/.ssh/known_hosts | \
+                        cut -f 1 -d ' ' | \
+                        sed -e s/,.*//g | \
+                        grep -v ^# | \
+                        uniq | \
+                        grep -v "\[" ;
+                cat ~/.ssh/config | \
+                        grep "^Host " | \
+                        awk '{print $2}';
+                cat ~/.ssh/config.d/* | \
+                        grep "^Host " | \
+                        awk '{print $2}'
+                `
+        COMPREPLY=( $(compgen -W "${comp_ssh_hosts}" -- $cur))
+        return 0
+}
+complete -F _complete_ssh_hosts ssh

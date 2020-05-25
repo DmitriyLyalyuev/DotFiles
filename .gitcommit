@@ -1,0 +1,20 @@
+feature: 
+# |<----  Using a Maximum Of 50 Characters  ---->|
+#
+# Description
+# BREAKING CHANGES:
+#
+# |<----   Try To Limit Each Line to a Maximum Of 72 Characters   ---->|
+#
+# --- COMMIT END ---
+# Tag can be
+#    feature  (new feature)
+#    fix      (bug fix)
+#    refactor (refactoring production code)
+#    cleanup  (cleanup not needed stuff)
+#    ci       (changes in CI configurations)
+#    style    (formatting, missing semi colons, etc; no code change)
+#    docs     (changes to documentation)
+#    version  (version bump/new release; no production code change)
+#    hack     (Temporary fix to make things move forward; please avoid it)
+#    WIP      (Work In Progress; for intermediate commits to keep patches reasonably sized)
