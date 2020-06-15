@@ -33,5 +33,8 @@ export PATH="$HOME/go/bin:$(brew --prefix qt@5.5)/bin:$HOME/.rbenv/shims:$HOME/.
 export CDPATH=/Users/silver/Projects/ManageBac
 export LC_ALL=en_US.UTF-8
 export LOCAL_ANSIBLE_PYTHON_INTERPRETER=`which python`
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
+ssh-add
 
 eval "$(rbenv init -)"

@@ -13,10 +13,10 @@ vim +PluginInstall +qall
 
 ln -s ~/Projects/Public/DotFiles/.profile ~/.profile
 ln -s ~/Projects/Public/DotFiles/.bashrc ~/.bashrc
+ln -s ~/Projects/Public/DotFiles/.zshrc ~/.zshrc
 ln -s ~/Projects/Public/DotFiles/.gitconfig ~/.gitconfig
 ln -s ~/Projects/Public/DotFiles/.gitcommit ~/.gitcommit
 ln -s ~/Projects/Public/DotFiles/.bash_functions ~/.bash_functions
 ln -s ~/Projects/Public/DotFiles/.bash_aliases ~/.bash_aliases
 ln -s ~/Projects/Public/DotFiles/.bash_completion ~/.bash_completion
 ln -s ~/Projects/Public/DotFiles/.vimrc ~/.vimrc
-
