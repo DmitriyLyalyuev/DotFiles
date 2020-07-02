@@ -1,1 +1,9 @@
+# Short names
+
 alias lg=lazygit
+alias tf=terraform
+
+# Virtual environment for python
+
+alias mkvenv='python3 -m venv ./venv && source ./venv/bin/activate && pip install --upgrade pip'
+alias activate='source ./venv/bin/activate'
