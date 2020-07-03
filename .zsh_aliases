@@ -1,9 +1,23 @@
+# Useful keys
+
+alias wget='wget -c'
+alias mkdir='mkdir -pv'
+alias less='less -FX'
+
+
 # Short names
 
-alias lg=lazygit
-alias tf=terraform
+alias lg="lazygit"
+alias tf="terraform"
+alias be="bundle exec"
 
 # Virtual environment for python
 
 alias mkvenv='python3 -m venv ./venv && source ./venv/bin/activate && pip install --upgrade pip'
 alias activate='source ./venv/bin/activate'
+
+# Cool funcs
+
+weather() {
+  curl http://wttr.in/$1
+}
