@@ -15,6 +15,8 @@ set showmode                    "Show current mode down the bottom
 set gcr=a:blinkon0              "Disable cursor blink
 set novb                        "No sounds
 set autoread                    "Reload files changed outside vim
+set autoindent
+set expandtab
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
@@ -23,6 +25,10 @@ set hidden
 
 "turn on syntax highlighting
 syntax on
+let python_highlight_all=1
+
+" show a visual line under the cursor's current line
+set cursorline
 
 " Change leader to a comma because the backslash is too far away
 " That means all \x commands turn into ,x
@@ -159,6 +165,19 @@ Plugin 'kchmck/vim-coffee-script'
 " requires exuberant ctags
 Plugin 'majutsushi/tagbar'
 
+" intendation for python
+Plugin 'vim-scripts/indentpython.vim'
+
+" Auto-complete for python
+Plugin 'Valloric/YouCompleteMe'
+
+" Check the syntax
+Plugin 'vim-syntastic/syntastic'
+Plugin 'nvie/vim-flake8'
+
+" Terraform
+Plugin 'hashivim/vim-terraform'
+
 " END OF VUNDLE PLUGINS
 """"""""""""""""""""""""""""""""""""""""""""""""
 filetype plugin indent on     " required!
@@ -194,7 +213,7 @@ let g:syntastic_auto_jump=0
 "show the error list automatically
 let g:syntastic_auto_loc_list=1
 "don't care about warnings
-let g:syntastic_quiet_warnings=0
+let g:syntastic_quiet_messages = {'level': 'warnings'}
 
 " Coffee Script Compilation
 " Compile the current file into a vertcally split screen
@@ -202,15 +221,15 @@ map <Leader>cs <esc>:CoffeeCompile vert<cr>
 
 " ====== Make tabs be addressable via Apple+1 or 2 or 3, etc
 " Use numbers to pick the tab you want (like iTerm)
-map <silent> <D-1> :tabn 1<cr>
-map <silent> <D-2> :tabn 2<cr>
-map <silent> <D-3> :tabn 3<cr>
-map <silent> <D-4> :tabn 4<cr>
-map <silent> <D-5> :tabn 5<cr>
-map <silent> <D-6> :tabn 6<cr>
-map <silent> <D-7> :tabn 7<cr>
-map <silent> <D-8> :tabn 8<cr>
-map <silent> <D-9> :tabn 9<cr>
+map <silent> <Leader>1 :tabn 1<cr>
+map <silent> <Leader>2 :tabn 2<cr>
+map <silent> <Leader>3 :tabn 3<cr>
+map <silent> <Leader>4 :tabn 4<cr>
+map <silent> <Leader>5 :tabn 5<cr>
+map <silent> <Leader>6 :tabn 6<cr>
+map <silent> <Leader>7 :tabn 7<cr>
+map <silent> <Leader>8 :tabn 8<cr>
+map <silent> <Leader>9 :tabn 9<cr>
 
 " ===== Add some shortcuts for ctags
 map <Leader>tt <esc>:TagbarToggle<cr>
@@ -226,3 +245,28 @@ augroup markdown
     au!
     au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 augroup END
+
+
+" PEP8 intendation for python files
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
+
+" Highlight unnecssary whitespaces
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+" Autocompletion
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree

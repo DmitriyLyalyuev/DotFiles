@@ -1,6 +1,6 @@
 [core]
     editor = vim
-    excludesFile = /Users/silver/.gitignore_global
+    excludesFile = /Users/silver/.gitignore
     autocrlf = input
 
 [color]
@@ -73,7 +73,7 @@
 
 [commit]
     template = /Users/silver/.gitcommit
-    gpgSign = false
+    gpgSign = true
 
 [filter "lfs"]
     clean = git-lfs clean -- %f
@@ -82,4 +82,6 @@
     required = true
 
 [pull]
-	rebase = true
+    rebase = true
+[pager]
+	branch = false
