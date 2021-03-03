@@ -73,7 +73,7 @@
 
 [commit]
     template = /Users/silver/.gitcommit
-    gpgSign = true
+    gpgSign = false
 
 [filter "lfs"]
     clean = git-lfs clean -- %f
@@ -81,7 +81,7 @@
     process = git-lfs filter-process
     required = true
 
-[pull]
-    rebase = true
 [pager]
-	branch = false
+    branch = false
+[pull]
+	rebase = false

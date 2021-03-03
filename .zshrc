@@ -9,7 +9,6 @@ export ZSH="/Users/silver/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
-#ZSH_THEME="agnoster"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -122,13 +121,14 @@ if [[ -f "~/.gnupg/.gpg-agent-info" && -n "$(pgrep gpg-agent)" ]]; then
   source ~/.gnupg/.gpg-agent-info
   export GPG_AGENT_INFO
 else
-  eval $(eval $(gpg-agent --daemon --options ~/.gnupg/gpg-agent.conf > /dev/null 2&>1)) > /dev/null 2&>1
+  eval $(eval $(gpg-agent --daemon --options ~/.gnupg/gpg-agent.conf > /dev/null 2>&1)) > /dev/null 2>&1
 fi
 
 ssh-add > /dev/null 2>&1
 
-export PATH="$HOME/go/bin:$(brew --prefix qt@5.5)/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/bin:$PATH:/usr/local/bin:/usr/local/sbin"
+export PATH="$HOME/go/bin:$(brew --prefix qt@5.5)/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:/usr/local/opt/mysql-client/bin:$HOME/bin:$PATH:/usr/local/bin:/usr/local/sbin"
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+export PULUMI_CONFIG_PASSPHRASE=''
 
 [ -f ~/.zsh_aliases ] && . ~/.zsh_aliases
 [ -f ~/.security_tokens ] && . ~/.security_tokens
@@ -136,5 +136,3 @@ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 eval "$(rbenv init -)"
 
 eval "$(starship init zsh)"
-#source ~/.oh-my-zsh/custom/plugins/kube-ps1/kube-ps1.sh
-#PROMPT='$(kube_ps1)'$PROMPT
