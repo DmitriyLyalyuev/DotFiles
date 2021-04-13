@@ -126,9 +126,10 @@ fi
 
 ssh-add > /dev/null 2>&1
 
-export PATH="$HOME/go/bin:$(brew --prefix qt@5.5)/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:/usr/local/opt/mysql-client/bin:$HOME/bin:$PATH:/usr/local/bin:/usr/local/sbin"
+export PATH="$HOME/go/bin:$(/opt/homebrew/bin/brew --prefix)/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:/usr/local/opt/mysql-client/bin:$HOME/bin:$PATH:/usr/local/bin:/usr/local/sbin"
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 export PULUMI_CONFIG_PASSPHRASE=''
+export AWS_PROFILE=faria
 
 [ -f ~/.zsh_aliases ] && . ~/.zsh_aliases
 [ -f ~/.security_tokens ] && . ~/.security_tokens
