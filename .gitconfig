@@ -84,6 +84,6 @@
 [pager]
     branch = false
 [pull]
-	rebase = false
+	rebase = true
 [init]
 	defaultBranch = master
