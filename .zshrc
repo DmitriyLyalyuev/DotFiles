@@ -71,7 +71,6 @@ ZSH_THEME="robbyrussell"
 plugins=(
 #    git 
     command-not-found 
-    django 
     zsh-syntax-highlighting 
     zsh-autosuggestions
     brew
@@ -128,12 +127,23 @@ ssh-add > /dev/null 2>&1
 
 export PATH="$HOME/go/bin:$(/opt/homebrew/bin/brew --prefix)/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:/usr/local/opt/mysql-client/bin:$HOME/bin:$PATH:/usr/local/bin:/usr/local/sbin"
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
-export PULUMI_CONFIG_PASSPHRASE=''
-export AWS_PROFILE=faria
+export CPLUS_INCLUDE_PATH=/opt/homebrew/include
+
+#export PULUMI_CONFIG_PASSPHRASE=''
+#export AWS_PROFILE=faria
 
 [ -f ~/.zsh_aliases ] && . ~/.zsh_aliases
 [ -f ~/.security_tokens ] && . ~/.security_tokens
 
 eval "$(rbenv init -)"
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
 eval "$(starship init zsh)"
+
+if [ -d "$HOME/.bookmarks" ]; then 
+    export CDPATH=".:$HOME/.bookmarks:/" 
+    alias goto="cd -P" 
+fi
