@@ -73,9 +73,6 @@ plugins=(
     command-not-found 
     zsh-syntax-highlighting 
     zsh-autosuggestions
-    brew
-    zsh-kubectl-prompt
-    kubectl
     )
 
 source $ZSH/oh-my-zsh.sh
