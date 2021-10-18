@@ -215,10 +215,6 @@ let g:syntastic_auto_loc_list=1
 "don't care about warnings
 let g:syntastic_quiet_messages = {'level': 'warnings'}
 
-" Coffee Script Compilation
-" Compile the current file into a vertcally split screen
-map <Leader>cs <esc>:CoffeeCompile vert<cr>
-
 " ====== Make tabs be addressable via Apple+1 or 2 or 3, etc
 " Use numbers to pick the tab you want (like iTerm)
 map <silent> <Leader>1 :tabn 1<cr>
@@ -235,8 +231,8 @@ map <silent> <Leader>9 :tabn 9<cr>
 map <Leader>tt <esc>:TagbarToggle<cr>
 " TODO later, get open tag in new tab working
 " http://stackoverflow.com/questions/563616/vim-and-ctags-tips-and-tricks
-" map <C-\>:tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-"map <A-]>:vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+map <Leader>e :split <CR>
+map <Leader>d :vsp <CR>
 
 " Support for github flavored markdown
 " via https://github.com/jtratner/vim-flavored-markdown
