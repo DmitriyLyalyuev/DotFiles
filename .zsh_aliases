@@ -4,7 +4,6 @@ alias wget='wget -c'
 alias mkdir='mkdir -pv'
 alias less='less -FX'
 
-
 # Short names
 
 alias lg="lazygit"
@@ -21,21 +20,7 @@ weather() {
   curl http://wttr.in/$1
 }
 
-killtf() {
-  ps aux | grep terra | grep -v grep | awk '{print $2}' | xargs -I[] kill -9 []
-}
-
-# Kubernetes
-
-alias k='kubecolor'
-alias ksn='_f(){k get namespace $1 > /dev/null; if [ $? -eq 1 ]; then return $?; fi;  k config set-context $(k config current-context) --namespace=$1; echo "Namespace: $1"};_f'
-
 # Brew M1
 alias brew='/opt/homebrew/bin/brew'
 alias tfenv='TFENV_ARCH=arm64 tfenv'
 
-awsregion() {
-    export AWS_REGION=$1
-    export AWS_DEFAULT_REGION=$1
-    export AWS_PROFILE=faria
-}
