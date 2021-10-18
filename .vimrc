@@ -7,7 +7,6 @@ set nocompatible
 
 " ================ General Config ====================
 
-<<<<<<< Updated upstream
 set number                      "Line numbers are good
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
@@ -23,33 +22,14 @@ set expandtab
 " exist in the background without being in a window.
 " http://items.sjbach.com/319/configuring-vim-right
 set hidden
-=======
-" ------Plugins-------
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-surround'
-Plugin 'gcmt/breeze.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'ErichDonGubler/vim-sublime-monokai'
->>>>>>> Stashed changes
 
 "turn on syntax highlighting
 syntax on
 let python_highlight_all=1
 
-<<<<<<< Updated upstream
 " show a visual line under the cursor's current line
 set cursorline
-=======
-call vundle#end()
-colorscheme sublimemonokai
 filetype plugin indent on
->>>>>>> Stashed changes
 
 " Change leader to a comma because the backslash is too far away
 " That means all \x commands turn into ,x
@@ -189,15 +169,14 @@ Plugin 'majutsushi/tagbar'
 " intendation for python
 Plugin 'vim-scripts/indentpython.vim'
 
-" Auto-complete for python
-Plugin 'Valloric/YouCompleteMe'
-
 " Check the syntax
 Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 
 " Terraform
 Plugin 'hashivim/vim-terraform'
+
+Plugin 'ErichDonGubler/vim-sublime-monokai'
 
 " END OF VUNDLE PLUGINS
 """"""""""""""""""""""""""""""""""""""""""""""""
@@ -217,7 +196,7 @@ set background=dark
 
 " For MacVim
 set guifont=Monaco:h16
-
+colorscheme sublimemonokai
 
 " NERDTree Mappins
 " Open Nerd Tree with <Leader>n
