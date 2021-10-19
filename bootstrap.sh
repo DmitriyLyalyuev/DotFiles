@@ -18,7 +18,7 @@ ln -sf ~/Projects/Public/DotFiles/.gitcommit ~/.gitcommit
 ln -sf ~/Projects/Public/DotFiles/.gitignore ~/.gitignore
 ln -sf ~/Projects/Public/DotFiles/.vimrc ~/.vimrc
 ln -sf ~/Projects/Public/DotFiles/.gemrc ~/.gemrc
-
+ln -sf ~/Projects/Public/DotFiles/.auto_completion ~/.auto_completion
 # Setup software
 source ~/.zshrc
 brew bundle
