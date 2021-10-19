@@ -122,7 +122,8 @@ fi
 
 ssh-add > /dev/null 2>&1
 
-export PATH="$HOME/go/bin:$(/opt/homebrew/bin/brew --prefix)/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:/usr/local/opt/mysql-client/bin:$HOME/bin:$PATH:/usr/local/bin:/usr/local/sbin"
+export PATH="$HOME/go/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:/usr/local/opt/mysql-client/bin:$HOME/bin:$PATH:/usr/local/bin:/usr/local/sbin"
+[ -f /opt/homebrew/bin/brew ] && export PATH="$(/opt/homebrew/bin/brew --prefix)/bin:$PATH"
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 export CPLUS_INCLUDE_PATH=/opt/homebrew/include
 
@@ -144,3 +145,6 @@ if [ -d "$HOME/.bookmarks" ]; then
     export CDPATH=".:$HOME/.bookmarks:/" 
     alias goto="cd -P" 
 fi
+
+[ -f ~/.auto_completion ] && . ~/.auto_completion
+
