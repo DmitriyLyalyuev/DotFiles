@@ -139,6 +139,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
+[ -f /opt/homebrew/opt/python@3.10/bin/python3.10 ] && export PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"
+[ -f /opt/homebrew/opt/python@3.10/bin/python3.10 ] && export LDFLAGS="-L/opt/homebrew/opt/python@3.10/lib"
+[ -f /opt/homebrew/opt/python@3.10/bin/python3.10 ] && export PKG_CONFIG_PATH="/opt/homebrew/opt/python@3.10/lib/pkgconfig"
+
 eval "$(starship init zsh)"
 
 if [ -d "$HOME/.bookmarks" ]; then 
