@@ -22,5 +22,5 @@ weather() {
 
 # Brew M1
 alias brew='/opt/homebrew/bin/brew'
-alias tfenv='TFENV_ARCH=arm64 tfenv'
+#alias tfenv='TFENV_ARCH=arm64 tfenv'
 
