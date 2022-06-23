@@ -129,6 +129,7 @@ export CPLUS_INCLUDE_PATH=/opt/homebrew/include
 
 #export PULUMI_CONFIG_PASSPHRASE=''
 #export AWS_PROFILE=faria
+export AWS_PAGER=""
 
 [ -f ~/.zsh_aliases ] && . ~/.zsh_aliases
 [ -f ~/.security_tokens ] && . ~/.security_tokens

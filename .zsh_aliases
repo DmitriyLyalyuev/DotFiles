@@ -25,3 +25,5 @@ alias brew='/opt/homebrew/bin/brew'
 
 alias k='kubecolor'
 alias kubectl='kubecolor'
+alias kx='kubectx'
+alias kns='kubens'

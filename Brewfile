@@ -47,6 +47,7 @@ brew "vim"
 brew "watch"
 brew "wget"
 brew "zsh"
+brew "jq"
 
 cask "basictex"
 cask "font-fira-code"
