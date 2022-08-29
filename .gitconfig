@@ -9,7 +9,7 @@
 [user]
     name = Dmitriy Lyalyuev
     email = dmitriy@lyalyuev.info
-    signingKey = BCDCAE73886BC8E02CAEBB93D9106B1605420A87
+    signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCvEL1A49gqJ9ZC3r3xpJPyjbPyg0IPjaddtM4/wJ4lwEa9MIIUpqsFve+nQNMb/TwiC2TeYSZiowOrj+73Qd3QesxH9bi9ih1hfhnrwt2VpHiQutVDt09MzIVC4rsljclnX+EOV4I/9oWBZhHSRGsG13vjCpj8C+f1gxx3zcUucgM2Bd6XYAk+s+jkDSuxKNxhJ5xX1KuAL+LqSRrY55ijl/RlGks1fB42MkmbtmBQbNpnMJNxRIZOWX0aN60cKBaW+CHOJ4hn589w91/LM/GYe2aOn/PGbsVSjKUoa5JR4BV11gAxOA0X2f1xB005aCSwygXPbPJuFUB2L9Krf5Xt
 
 [credential]
     helper = cache --timeout=3600
@@ -70,6 +70,10 @@
 
 [gpg]
     program = /opt/homebrew/bin/gpg
+    format = ssh
+
+[gpg "ssh"]
+    allowedSignersFile = /Users/silver/.ssh/allowed_signers
 
 [commit]
     template = /Users/silver/.gitcommit
@@ -89,4 +93,3 @@
 
 [init]
     defaultBranch = master
-
