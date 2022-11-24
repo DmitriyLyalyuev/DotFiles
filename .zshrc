@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -8,7 +15,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -69,11 +76,13 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-#    git 
+    z
+    kube-ps1
     command-not-found 
     zsh-syntax-highlighting 
     zsh-autosuggestions
-    )
+    cd-ls
+  )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -127,29 +136,28 @@ export PATH="$HOME/go/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:/usr/local/opt/mys
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 export CPLUS_INCLUDE_PATH=/opt/homebrew/include
 
-#export PULUMI_CONFIG_PASSPHRASE=''
-#export AWS_PROFILE=faria
 export AWS_PAGER=""
+export NVM_DIR="$HOME/.nvm"
+
+# zsh options
+setopt HIST_SAVE_NO_DUPS
 
 [ -f ~/.zsh_aliases ] && . ~/.zsh_aliases
 [ -f ~/.security_tokens ] && . ~/.security_tokens
 
-#eval "$(rbenv init -)"
-
-export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-[ -f /opt/homebrew/opt/python@3.10/bin/python3.10 ] && export PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"
-[ -f /opt/homebrew/opt/python@3.10/bin/python3.10 ] && export LDFLAGS="-L/opt/homebrew/opt/python@3.10/lib"
-[ -f /opt/homebrew/opt/python@3.10/bin/python3.10 ] && export PKG_CONFIG_PATH="/opt/homebrew/opt/python@3.10/lib/pkgconfig"
-
-eval "$(starship init zsh)"
-
-if [ -d "$HOME/.bookmarks" ]; then 
-    export CDPATH=".:$HOME/.bookmarks:/" 
-    alias goto="cd -P" 
-fi
+[ -f /opt/homebrew/opt/python@3.11/bin/python3.11 ] && export PATH="/opt/homebrew/opt/python@3.11/bin:$PATH"
+[ -f /opt/homebrew/opt/python@3.11/bin/python3.11 ] && export LDFLAGS="-L/opt/homebrew/opt/python@3.11/lib"
+[ -f /opt/homebrew/opt/python@3.11/bin/python3.11 ] && export PKG_CONFIG_PATH="/opt/homebrew/opt/python@3.11/lib/pkgconfig"
 
 [ -f ~/.auto_completion ] && . ~/.auto_completion
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/silver/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

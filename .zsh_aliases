@@ -12,13 +12,8 @@ alias be="bundle exec"
 
 # Virtual environment for python
 
-alias mkvenv='python3 -m venv ./venv && source ./venv/bin/activate && pip install --upgrade pip'
+alias mkvenv='python3.11 -m venv ./venv && source ./venv/bin/activate && pip install --upgrade pip'
 alias activate='source ./venv/bin/activate'
-
-# Cool funcs
-weather() {
-  curl http://wttr.in/$1
-}
 
 # Brew M1
 alias brew='/opt/homebrew/bin/brew'
@@ -27,3 +22,10 @@ alias k='kubecolor'
 alias kubectl='kubecolor'
 alias kx='kubectx'
 alias kns='kubens'
+alias kcac='kubectl cost --service-port 9003 --service-name opencost --kubecost-namespace opencost --allocation-path /allocation/compute  namespace --window 30d --show-efficiency=true --show-cpu --show-memory'
+
+
+alias reload='source ~/.zshrc'
+alias zshconfig='vim $HOME/.zshrc'
+
+alias ls='exa'
