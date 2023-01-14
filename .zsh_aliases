@@ -23,9 +23,10 @@ alias kubectl='kubecolor'
 alias kx='kubectx'
 alias kns='kubens'
 alias kcac='kubectl cost --service-port 9003 --service-name opencost --kubecost-namespace opencost --allocation-path /allocation/compute  namespace --window 30d --show-efficiency=true --show-cpu --show-memory'
-
+alias klogs='stern --tail 20'
 
 alias reload='source ~/.zshrc'
 alias zshconfig='vim $HOME/.zshrc'
 
 alias ls='exa'
+
