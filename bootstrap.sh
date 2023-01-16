@@ -4,7 +4,7 @@
 sudo mkdir -p /opt/homebrew
 sudo chown -R silver:staff /opt/homebrew
 cd /opt/homebrew
-curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
+curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C /opt/homebrew
 
 # Install OhMyZSH
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
