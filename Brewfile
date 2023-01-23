@@ -53,6 +53,7 @@ brew "exa"
 brew "grc"
 brew "stern"
 brew "hidetatz/tap/kubecolor"
+brew "neofetch"
 
 cask "basictex"
 cask "font-fira-code"
