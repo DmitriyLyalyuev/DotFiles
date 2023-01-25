@@ -57,6 +57,7 @@ brew "neofetch"
 
 cask "basictex"
 cask "font-fira-code"
-# cask "docker"
+cask "karabiner-elements"
+cask "dozer"
 # cask "slack"
 # cask "telegram"
