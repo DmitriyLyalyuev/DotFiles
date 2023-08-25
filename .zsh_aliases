@@ -30,3 +30,4 @@ alias zshconfig='vim $HOME/.zshrc'
 
 alias ls='exa'
 
+alias jsonpretty='function _jsonpretty() { python -m json.tool $1; }; _jsonpretty'

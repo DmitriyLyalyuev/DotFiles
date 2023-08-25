@@ -131,6 +131,8 @@ fi
 
 ssh-add > /dev/null 2>&1
 
+#eval "$(rbenv init - zsh)"
+
 export PATH="$HOME/go/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:/usr/local/opt/mysql-client/bin:$HOME/bin:$PATH:/usr/local/bin:/usr/local/sbin"
 [ -f /opt/homebrew/bin/brew ] && export PATH="$(/opt/homebrew/bin/brew --prefix)/bin:$PATH"
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES

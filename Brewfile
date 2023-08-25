@@ -54,6 +54,7 @@ brew "grc"
 brew "stern"
 brew "hidetatz/tap/kubecolor"
 brew "neofetch"
+brew "glow"
 
 cask "basictex"
 cask "font-fira-code"
