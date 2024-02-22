@@ -38,7 +38,7 @@
     mr = "log --pretty='%h: %B' --first-parent --no-merges --reverse"
     cleanup = "!git checkout master && git fetch -p && git branch --merged | grep -v '* ' | xargs -I {} git branch -d {}"
     squash = "!f(){ git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; };f"
-
+    pp = "!git pull && git push"
 [color]
     diff = true
     status = true
@@ -64,6 +64,7 @@
 
 [rebase]
     autoStash = true
+	autosquash = true
 
 [stash]
     showPatch = true
@@ -78,6 +79,7 @@
 [commit]
     template = /Users/silver/.gitcommit
     gpgSign = true
+	verbose = true
 
 [filter "lfs"]
     clean = git-lfs clean -- %f
@@ -92,4 +94,20 @@
     rebase = true
 
 [init]
-    defaultBranch = master
+	defaultBranch = master
+[merge]
+	conflictstyle = zdiff3
+[rerere]
+	enabled = true
+[help]
+	autocorrect = 10
+[diff]
+	algorithm = histogram
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[transfer]
+	fsckobjects = true
+[fetch]
+	fsckobjects = true
+[receive]
+	fsckObjects = true
