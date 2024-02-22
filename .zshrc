@@ -129,8 +129,7 @@ else
   eval $(eval $(gpg-agent --daemon --options ~/.gnupg/gpg-agent.conf > /dev/null 2>&1)) > /dev/null 2>&1
 fi
 
-ssh-add > /dev/null 2>&1
-
+#ssh-add > /dev/null 2>&1
 #eval "$(rbenv init - zsh)"
 
 export PATH="$HOME/go/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:/usr/local/opt/mysql-client/bin:$HOME/bin:$PATH:/usr/local/bin:/usr/local/sbin"
@@ -150,9 +149,9 @@ setopt HIST_SAVE_NO_DUPS
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-[ -f /opt/homebrew/opt/python@3.11/bin/python3.11 ] && export PATH="/opt/homebrew/opt/python@3.11/bin:$PATH"
-[ -f /opt/homebrew/opt/python@3.11/bin/python3.11 ] && export LDFLAGS="-L/opt/homebrew/opt/python@3.11/lib"
-[ -f /opt/homebrew/opt/python@3.11/bin/python3.11 ] && export PKG_CONFIG_PATH="/opt/homebrew/opt/python@3.11/lib/pkgconfig"
+[ -f /opt/homebrew/opt/python@3.12/bin/python3.12 ] && export PATH="/opt/homebrew/opt/python@3.12/bin:$PATH"
+[ -f /opt/homebrew/opt/python@3.12/bin/python3.12 ] && export LDFLAGS="-L/opt/homebrew/opt/python@3.12/lib"
+[ -f /opt/homebrew/opt/python@3.12/bin/python3.12 ] && export PKG_CONFIG_PATH="/opt/homebrew/opt/python@3.12/lib/pkgconfig"
 
 [ -f ~/.auto_completion ] && . ~/.auto_completion
 
@@ -160,7 +159,3 @@ setopt HIST_SAVE_NO_DUPS
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 eval $(thefuck --alias)
-
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/silver/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

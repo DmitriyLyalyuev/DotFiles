@@ -12,7 +12,7 @@ alias be="bundle exec"
 
 # Virtual environment for python
 
-alias mkvenv='python3.11 -m venv ./venv && source ./venv/bin/activate && pip install --upgrade pip'
+alias mkvenv='python3.12 -m venv ./venv && source ./venv/bin/activate && pip install --upgrade pip'
 alias activate='source ./venv/bin/activate'
 
 # Brew M1
@@ -31,3 +31,6 @@ alias zshconfig='vim $HOME/.zshrc'
 alias ls='exa'
 
 alias jsonpretty='function _jsonpretty() { python -m json.tool $1; }; _jsonpretty'
+alias bc='better-commits'
+
+alias wfvpn='sshuttle -r ansible@54.197.160.159 10.0.0.0/8'
