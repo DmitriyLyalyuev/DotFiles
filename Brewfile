@@ -55,6 +55,7 @@ brew "stern"
 brew "hidetatz/tap/kubecolor"
 brew "neofetch"
 brew "glow"
+brew "gping"
 
 cask "basictex"
 cask "font-fira-code"
