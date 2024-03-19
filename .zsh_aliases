@@ -22,15 +22,14 @@ alias k='kubecolor'
 alias kubectl='kubecolor'
 alias kx='kubectx'
 alias kns='kubens'
-alias kcac='kubectl cost --service-port 9003 --service-name opencost --kubecost-namespace opencost --allocation-path /allocation/compute  namespace --window 30d --show-efficiency=true --show-cpu --show-memory'
 alias klogs='stern --tail 20'
 
 alias reload='source ~/.zshrc'
 alias zshconfig='vim $HOME/.zshrc'
 
 alias ls='exa'
+alias cat='bat -p'
 
 alias jsonpretty='function _jsonpretty() { python -m json.tool $1; }; _jsonpretty'
-alias bc='better-commits'
 
 alias wfvpn='sshuttle -r ansible@54.197.160.159 10.0.0.0/8'
