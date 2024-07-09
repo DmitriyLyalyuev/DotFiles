@@ -6,21 +6,18 @@ sudo chown -R silver:staff /opt/homebrew
 cd /opt/homebrew
 curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C /opt/homebrew
 
-# Install OhMyZSH
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 # Setup configs
-ln -sf ~/Projects/Public/DotFiles/.profile ~/.profile
-ln -sf ~/Projects/Public/DotFiles/.zshrc ~/.zshrc
-ln -sf ~/Projects/Public/DotFiles/.zsh_aliases ~/.zsh_aliases
 ln -sf ~/Projects/Public/DotFiles/.gitconfig ~/.gitconfig
 ln -sf ~/Projects/Public/DotFiles/.gitcommit ~/.gitcommit
 ln -sf ~/Projects/Public/DotFiles/.gitignore ~/.gitignore
 ln -sf ~/Projects/Public/DotFiles/.vimrc ~/.vimrc
 ln -sf ~/Projects/Public/DotFiles/.gemrc ~/.gemrc
 ln -sf ~/Projects/Public/DotFiles/.auto_completion ~/.auto_completion
+ln -sf ~/Projects/Public/DotFiles/fish ~/config/fish
+ln -sf ~/Projects/Public/DotFiles/.aliases ~/.aliases
+
 # Setup software
-source ~/.zshrc
+xcode-select --install
 brew bundle
 
 # Install vim plugins
