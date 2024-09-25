@@ -48,7 +48,6 @@ brew "gping"
 brew "tldr"
 brew "bat"
 brew "bitwarden-cli"
-brew "dlvhdr/formulae/diffnav"
 
 ### Kubernetes stuff
 # brew "helm"
