@@ -89,6 +89,7 @@
 
 [pager]
     branch = false
+	diff = diffnav
 
 [pull]
     rebase = true
