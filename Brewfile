@@ -1,8 +1,6 @@
 tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
-tap "homebrew/core"
 tap "warrensbox/tap"
 brew "python@3.9"
 brew "python@3.12"
@@ -48,6 +46,7 @@ brew "gping"
 brew "tldr"
 brew "bat"
 brew "bitwarden-cli"
+brew "orbstack"
 
 ### Kubernetes stuff
 # brew "helm"
