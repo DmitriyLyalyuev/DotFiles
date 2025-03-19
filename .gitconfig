@@ -1,6 +1,6 @@
 [core]
     editor = vim
-    excludesFile = /Users/silver/.gitignore
+	excludesfile = /Users/silver/.gitignore
     autocrlf = input
 
 [color]
@@ -9,13 +9,15 @@
 [user]
     name = Dmitriy Lyalyuev
     email = dmitriy@lyalyuev.info
-    signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCvEL1A49gqJ9ZC3r3xpJPyjbPyg0IPjaddtM4/wJ4lwEa9MIIUpqsFve+nQNMb/TwiC2TeYSZiowOrj+73Qd3QesxH9bi9ih1hfhnrwt2VpHiQutVDt09MzIVC4rsljclnX+EOV4I/9oWBZhHSRGsG13vjCpj8C+f1gxx3zcUucgM2Bd6XYAk+s+jkDSuxKNxhJ5xX1KuAL+LqSRrY55ijl/RlGks1fB42MkmbtmBQbNpnMJNxRIZOWX0aN60cKBaW+CHOJ4hn589w91/LM/GYe2aOn/PGbsVSjKUoa5JR4BV11gAxOA0X2f1xB005aCSwygXPbPJuFUB2L9Krf5Xt
+    signingkey = key::ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHZQXMmL5UqIfiN8c/fl7y2TRYj9QBekmlaUqHkXrRa+5yt/NrkhiftLvaIU96L6OxheaK/c0JaN51NHaTcEU4M=
 
 [credential]
     helper = cache --timeout=3600
 
 [push]
-    default = simple
+	default = simple
+	autoSetupRemote = true
+	followTags = true
 
 [alias]
     co = checkout
@@ -39,6 +41,7 @@
     cleanup = "!git checkout master && git fetch -p && git branch --merged | grep -v '* ' | xargs -I {} git branch -d {}"
     squash = "!f(){ git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; };f"
     pp = "!git pull && git push"
+
 [color]
     diff = true
     status = true
@@ -63,8 +66,9 @@
     untracked = red
 
 [rebase]
-    autoStash = true
-	autosquash = true
+	autoStash = true
+	autoSquash = true
+	updateRefs = true
 
 [stash]
     showPatch = true
@@ -91,23 +95,36 @@
     branch = false
 
 [pull]
-    rebase = true
+	rebase = true
 
 [init]
 	defaultBranch = master
 [merge]
-	conflictstyle = zdiff3
+    conflictstyle = zdiff3
 [rerere]
 	enabled = true
+	autoupdate = true
 [help]
-	autocorrect = 10
+	autocorrect = prompt
 [diff]
 	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
 [url "git@github.com:"]
-	insteadOf = https://github.com/
+    insteadOf = https://github.com/
 [transfer]
-	fsckobjects = true
+    fsckobjects = true
 [fetch]
-	fsckobjects = true
+    fsckobjects = true
+	prune = true
+	pruneTags = true
+	all = true
 [receive]
-	fsckObjects = true
+    fsckObjects = true
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
